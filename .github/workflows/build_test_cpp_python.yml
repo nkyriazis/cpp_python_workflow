@@ -12,7 +12,7 @@ jobs:
     steps:
       # Checkout the code, library action
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       
       # Initialize submodules, user-provided action
       - name: Checkout submodules
