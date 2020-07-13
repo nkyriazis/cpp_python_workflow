@@ -35,3 +35,20 @@ jobs:
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build .
+          cd ..
+          
+          
+      # Run C++ tests
+      - name: C++ tests
+        run: |
+          ./build/tests/tests
+          
+      # Run python tests
+      - name: Python tests
+        # Make sure the python module is discoverable and then run tests
+        run: |
+          export PYTHONPATH=$(pwd)/build/pynumber_lib
+          cd python
+          python -m cpp_python_workflow.tests.test_unit
+          cd ..
+          
