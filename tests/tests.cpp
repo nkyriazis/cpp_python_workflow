@@ -2,9 +2,9 @@
 #include <boost/mpl/list.hpp>
 #include <boost/test/unit_test.hpp>
 
-#include <lib/lib.hpp>
+#include <number_lib/number_lib.hpp>
 
-using namespace lib;
+using namespace number_lib;
 
 using number_types =
   boost::mpl::list<unsigned int, int, float, double, long double>;

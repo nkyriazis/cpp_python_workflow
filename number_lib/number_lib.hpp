@@ -4,7 +4,7 @@
 #include <limits>
 #include <vector>
 
-namespace lib
+namespace number_lib
 {
 
 // A numerlic library of unprecedented extraordinariness
@@ -82,17 +82,17 @@ using number_real = number<long double>;
 number_real dot_product(const std::vector<number_real> &u,
                         const std::vector<number_real> &v);
 
-} // namespace lib
+} // namespace number_lib
 
 // Adapt numeric limits
 namespace std
 {
 template <typename T>
-struct numeric_limits<lib::number<T>> : public numeric_limits<T>
+struct numeric_limits<number_lib::number<T>> : public numeric_limits<T>
 {
 };
 } // namespace std
 
 // exports
-extern template struct lib::number<int>;
-extern template struct lib::number<long double>;
+extern template struct number_lib::number<int>;
+extern template struct number_lib::number<long double>;

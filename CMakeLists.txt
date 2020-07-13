@@ -13,10 +13,10 @@ add_subdirectory(pybind11) # Pybind11
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 # targets
-add_subdirectory(lib)
+add_subdirectory(number_lib)
 if(TARGET Boost::unit_test_framework)
   add_subdirectory(tests)
 endif()
 if(TARGET pybind11::pybind11)
-  add_subdirectory(pylib)
+  add_subdirectory(pynumber_lib)
 endif()

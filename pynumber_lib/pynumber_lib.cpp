@@ -1,11 +1,11 @@
-#include <lib/lib.hpp>
+#include <number_lib/number_lib.hpp>
 #include <pybind11/operators.h>
 #include <pybind11/pybind11.h>
 
-using namespace lib;
+using namespace number_lib;
 namespace py = pybind11;
 
-PYBIND11_MODULE(pylib, m)
+PYBIND11_MODULE(pynumber_lib, m)
 {
   py::class_<number_int>(m, "number_int")
     .def(py::init<>())

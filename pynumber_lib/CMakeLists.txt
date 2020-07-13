@@ -1,0 +1,2 @@
+pybind11_add_module(pynumber_lib pynumber_lib.cpp)
+target_link_libraries(pynumber_lib PRIVATE number_lib)
