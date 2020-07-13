@@ -1,0 +1,37 @@
+name: C++/python CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    # Simple example on ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code, library action
+      - name: Checkout
+      - uses: actions/checkout@v2
+      
+      # Initialize submodules, user-provided action
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        
+      # Set-up python
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      # We need boost for C++ testing
+      - name: Install boost
+        run: sudo apt install libboost-all-dev
+      
+      # Build  
+      - name: Build C++
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
