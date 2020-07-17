@@ -51,7 +51,7 @@ struct number
     return number<other_type>{static_cast<other_type>(_value)};
   }
 
-  value_type _value = value_type{0};
+  value_type _value = value_type{1};
 };
 
 // Overloads for common numeric functions
